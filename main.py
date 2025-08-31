@@ -37,6 +37,8 @@ def run():
         }
 
         if has_started:
+            # This data is saved every 120 seconds; 
+            # the data is used in another app to determine if Mr Ping Ping is still active.
             save_data.save_data(None, "mr_ping_ping", data)
 
         has_started = True
@@ -165,6 +167,7 @@ if __name__ == '__main__':
 
     print('Mr-Ping-Ping: Starting')
 
+    ping_apps()
     run()
 
     while True:
