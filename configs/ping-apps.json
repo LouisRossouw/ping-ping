@@ -32,9 +32,17 @@
         "notify": true
     },
     {
-        "name": "Temperature/Humidity",
+        "name": "Temperature/Humidity Room 01",
         "slug": "temperature_humidity",
-        "base_url": "http://10.0.0.109/",
+        "base_url": "http://10.0.0.153/",
+        "endpoints": ["temperature","humidity"],
+        "active": true,
+        "notify": true
+    },
+        {
+        "name": "Temperature/Humidity Room 02",
+        "slug": "temperature_humidity_02",
+        "base_url": "http://10.0.0.154/",
         "endpoints": ["temperature","humidity"],
         "active": true,
         "notify": true
