@@ -39,11 +39,19 @@
         "active": true,
         "notify": true
     },
-        {
+    {
         "name": "Temperature/Humidity Room 02",
         "slug": "temperature_humidity_02",
         "base_url": "http://10.0.0.154/",
         "endpoints": ["temperature","humidity"],
+        "active": true,
+        "notify": true
+    },
+    {
+        "name": "Meter Reader API",
+        "slug": "meter-reader-api",
+        "base_url": "http://10.0.0.152:5001/",
+        "endpoints": ["process-meter","electricity"],
         "active": true,
         "notify": true
     }
