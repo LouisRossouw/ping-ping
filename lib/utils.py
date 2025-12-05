@@ -111,5 +111,12 @@ def generate_random_code(length=5):
     return ''.join(random.choice(characters) for _ in range(length))
 
 
+def get_notify_endpoint(settings):
+    """ Builds the API endpoint for the notification alert. """
+    url = settings.get('tele_jamp_api_baseurl')
+    bot_name = settings.get('notify_bot')
+    return f"{url}/notify/bots/{bot_name}"
+
+
 if __name__ == "__main__":
     print(datetime.datetime.now().time())

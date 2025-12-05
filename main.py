@@ -6,12 +6,9 @@ from time import sleep
 
 import lib.utils as utils
 import lib.save_data as save_data
-import lib.notification as notification
 
 root_dir = os.path.dirname(__file__)
 sys.path.append(root_dir)
-
-BotNot = notification.Notification()
 
 global settings
 
@@ -37,7 +34,7 @@ def run():
         }
 
         if has_started:
-            # This data is saved every 120 seconds; 
+            # This data is saved every 120 seconds;
             # the data is used in another app to determine if Mr Ping Ping is still active.
             save_data.save_data(None, "mr_ping_ping", data)
 
@@ -148,9 +145,12 @@ def report(app, code):
     """ Sends a telegram message to admin. """
 
     if settings.get('notifications'):
-        txt_1 = "👨‍🚀 Mr-Ping-Ping:\n\n"
-        txt_2 = f"❌No Response: {app.get('slug')} : {code}"
-        BotNot.send_ADMIN_notification(txt_1 + txt_2)
+        payload = [
+            "👨‍🚀 Mr-Ping-Ping:\n\n",
+            f"❌No Response: {app.get('slug')} : {code}"
+        ]
+
+        requests.post(url=utils.get_notify_endpoint(settings), json=payload)
 
 
 def print_Status(name, success, code, res_time):
@@ -181,9 +181,11 @@ if __name__ == '__main__':
             error_count += 1
 
             if error_count >= 5:
-                # There is clearly something broken!!
-                txt_1 = "👨‍🚀 Mr-Ping-Ping:\n\n"
-                txt_2 = f"❌Something is wrong with Mr-Ping-Ping! \n\n Waiting for admin input."
-                BotNot.send_ADMIN_notification(txt_1 + txt_2)
+                payload = [
+                    "👨‍🚀 Mr-Ping-Ping:\n\n",
+                    f"❌Something is wrong with Mr-Ping-Ping! \n\n Waiting for admin input."
+                ]
+                requests.post(url=utils.get_notify_endpoint(
+                    settings), json=payload)
 
                 input()
