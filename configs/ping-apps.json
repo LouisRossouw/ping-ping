@@ -49,7 +49,7 @@
     },
     {
         "name": "Meter Reader API",
-        "slug": "meter-reader-api",
+        "slug": "meter_reader_api",
         "base_url": "http://10.0.0.152:5001/",
         "endpoints": ["process-meter","electricity"],
         "active": true,
