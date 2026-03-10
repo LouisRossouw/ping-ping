@@ -54,5 +54,13 @@
         "endpoints": ["process-meter","electricity"],
         "active": true,
         "notify": true
+    },
+    {
+        "name": "Site Alert",
+        "slug": "site_alert",
+        "base_url": "http://10.0.0.152:5003/",
+        "endpoints": ["health"],
+        "active": true,
+        "notify": true
     }
 ]
