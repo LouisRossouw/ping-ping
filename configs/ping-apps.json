@@ -65,7 +65,7 @@
     },
     {
         "name": "Auto Actions",
-        "slug": "auto-actions",
+        "slug": "auto_actions",
         "base_url": "http://10.0.0.152:5004/",
         "endpoints": ["health"],
         "active": true,

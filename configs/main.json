@@ -1,9 +1,0 @@
-{
-    "process_name": "Mr-ping-ping",
-    "interval_min": 60 ,
-    "timeout": 15,
-    
-    "notifications": true,
-    "tele_jamp_api_baseurl": "http://10.0.0.152:5002",
-    "notify_bot": "null-face"
-}
