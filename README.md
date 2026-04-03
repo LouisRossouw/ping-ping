@@ -58,7 +58,7 @@ schedules.json
 ]
 
 or specific days / time:
-      ...rest
+      ...rest,
     "hour": 18,
     "minute": 0
     or "day_of_week": "sun", # mon-fri
