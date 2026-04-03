@@ -3,12 +3,10 @@ import os
 import sys
 from time import sleep
 
-this_dir = os.path.dirname(__file__)
-root_dir = os.path.dirname(this_dir)
+from core import utils
 
-sys.path.append(this_dir)
-
-import utils  # nopep8
+# Get root dir (one level up from core)
+root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def save_data(name, dir, stats):
