@@ -7,6 +7,7 @@ class Settings():
         self.root_path = os.path.dirname(os.path.dirname(__file__))
         self.configs_dir = os.path.join(self.root_path, "configs")
         self.data_dir = os.path.join(self.root_path, "data")
+        self.pings_data_dir = os.path.join(self.data_dir, 'pings')
 
         self.config_path = os.path.join(self.configs_dir, "config.json")  # nopep8
 

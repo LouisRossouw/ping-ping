@@ -62,7 +62,8 @@ def run_action(settings, action_slug):
                 success = code == 200
 
                 print_Status(slug, success, code, res_time)
-                report(action, code) if notify and not success else None
+                report(url_to_ping, action, code,
+                       settings) if notify and not success else None
 
                 data = {
                     "endpoint": endpoint,
@@ -94,7 +95,8 @@ def run_action(settings, action_slug):
             success = code == 200
 
             print_Status(slug, success, code, res_time)
-            report(action, code, settings) if notify and not success else None
+            report(url_to_ping, action, code,
+                   settings) if notify and not success else None
 
             data = {
                 "endpoint": None,
@@ -135,6 +137,7 @@ def run_action(settings, action_slug):
         "elapsed_time": elapsed_time,
         "timestamp": date_now.timestamp(),
         "datetime": date_now.strftime("%d-%m-%Y %H:%M"),
+        "pinged": slug
     }
 
     # Manifest historic data
@@ -154,17 +157,16 @@ def print_Status(name, success, code, res_time):
         f"Mr-Ping-Ping: Checked - {name} | Res: {success} - {code} | Time: {res_time}")
 
 
-def report(action, code, settings):
+def report(url_to_ping, action, code, settings):
     """ Sends a telegram message to admin. """
 
     if settings.notifications:
-        if settings.notifications:
-            url = f"{settings.tele_jam_api_baseurl}/notify/bots/{settings.notify_bot}"
-            requests.post(url=url, json=[f"🧩 {settings.name}:\n\n", (
-                f"❌ Failed: {action['slug']}\n"
-                f"❔ Is service online?🤔"
-                f"🔗 url {url}\n"
-            )])
+        url = f"{settings.tele_jam_api_baseurl}/notify/bots/{settings.notify_bot}"
+        requests.post(url=url, json=[f"🧩 {settings.name}:\n\n", (
+            f"❌ Failed: {action['slug']}\n"
+            f"❔ Is service online?🤔 code: {str(code)}\n"
+            f"🔗 url {url_to_ping}\n"
+        )])
 
 
 def ping_ping(to_ping):
