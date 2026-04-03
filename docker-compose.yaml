@@ -8,3 +8,5 @@ services:
       - ./lib:/app/lib
       - /app/venv
     restart: unless-stopped
+    ports:
+      - "5005:5005"
