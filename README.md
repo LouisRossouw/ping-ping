@@ -3,7 +3,6 @@
 Scheduled pings for my side projects, saves out response data that gets used in another project, and sends out a notification if server is down, it also exposes an API for this service.
 
 Setup:
-
 ```
 python -m venv venv
 venv\Scripts\activate
@@ -12,11 +11,11 @@ python main.py
 ```
 
 Or Docker:
-
 `docker compose up -d --build`
 
-/confgis directory is for config files:
+json configs are used to define the service, the http urls and it's endpoints to ping, and the scheduled / intervals. (the schedules & ping-apps slug & actions keys must match)
 
+/confgs:
 ```
 config.json
 {
@@ -33,39 +32,34 @@ config.json
 ```
 
 ping-apps.json
-
 ```
 [
     {
-        "name": "Ping Ping",
-        "slug": "ping-ping",
-        "host": "[IP_ADDRESS]",
-        "port": 5005,
-        "timeout": 15,
-        "log_file": "service.log", // log file
-        "notifications": true, // enable notifications
-        "notify_bot": "null-face", // for telegram api service
-        "tele_jam_api_baseurl": "http://[IP_ADDRESS]" // for telegram api service
-    }
+        "name": "TimeInProgress-website-client",
+        "slug": "timeinprogress_client", // * Must match schedules.json action key
+        "base_url": "https://www.timeinprogress.com/",
+        "endpoints": ["api/health","api/stats"],
+        "active": true,
+        "notify": true
+    },
 ]
 ```
 
 schedules.json
-
 ```
 [
     {
-        "name": "Ping Ping",
-        "slug": "ping-ping",
-        "host": "[IP_ADDRESS]",
-        "port": 5005,
-        "timeout": 15,
-        "log_file": "service.log", // log file
-        "notifications": true, // enable notifications
-        "notify_bot": "null-face", // for telegram api service
-        "tele_jam_api_baseurl": "http://[IP_ADDRESS]" // for telegram api service
-    }
+        "name": "timeinprogress-website-client",
+        "action": "timeinprogress_client",  // * Must match ping-apps.json slug key, i should rename this to slug.
+        "trigger": "interval",
+        "hours": 1
+    },
 ]
+
+or specific days / time
+    "hour": 18,
+    "minute": 0
+    or "day_of_week": "sun", # mon-fri
 ```
 
 ## API
