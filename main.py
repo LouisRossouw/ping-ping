@@ -1,7 +1,7 @@
-from lib.settings import Settings
-from lib.api import ServiceApi
-from lib.scheduler import TaskScheduler
-from lib.runner import run_action
+from core.settings import Settings
+from api.api import ServiceApi
+from core.scheduler import TaskScheduler
+from core.runner import run_action
 
 settings = Settings()
 scheduler = TaskScheduler(settings, run_action)

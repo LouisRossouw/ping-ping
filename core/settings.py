@@ -1,5 +1,5 @@
 import os
-from lib.utils import read_json, write_to_json
+from core.utils import read_json, write_to_json
 
 
 class Settings():

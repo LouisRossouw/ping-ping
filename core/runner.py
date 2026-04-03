@@ -4,8 +4,8 @@ import requests
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
 
-from lib.utils import write_to_json, is_internet_available, start_time, calculate_request_time
-import lib.save_data as save_data
+from core.utils import write_to_json, is_internet_available, start_time, calculate_request_time
+import core.save_data as save_data
 
 this_dir = os.path.dirname(__file__)
 
