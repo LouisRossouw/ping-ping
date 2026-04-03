@@ -1,8 +1,9 @@
 # Ping Ping
 
-Scheduled pings for my side projects, saves out response data that gets used in another project, and sends out a notification if server is down, it also exposes an API for this service.
+lightweight monitoring and data-logging service built for my side projects, It performs scheduled health checks or pulls data from any provided endpoints, provides failure alerts via telegram bot. It also has a built-in REST API.
 
 Setup:
+
 ```
 python -m venv venv
 venv\Scripts\activate
@@ -21,6 +22,7 @@ Docker:
 json configs are used to define the service, the http urls and it's endpoints to ping, and the scheduled / intervals. (the schedules & ping-apps slug & actions keys must match)
 
 /confgs:
+
 ```
 {
       "name": "Ping Ping",
@@ -36,6 +38,7 @@ json configs are used to define the service, the http urls and it's endpoints to
 ```
 
 ping-apps.json
+
 ```
 [
     {
@@ -50,6 +53,7 @@ ping-apps.json
 ```
 
 schedules.json
+
 ```
 [
     {
