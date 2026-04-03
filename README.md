@@ -10,14 +10,15 @@ pip install -r requirements.txt
 python main.py
 ```
 
-Or Docker:
+Or
+
+Docker:
 `docker compose up -d --build`
 
 json configs are used to define the service, the http urls and it's endpoints to ping, and the scheduled / intervals. (the schedules & ping-apps slug & actions keys must match)
 
 /confgs:
 ```
-config.json
 {
       "name": "Ping Ping",
       "slug": "ping-ping",
