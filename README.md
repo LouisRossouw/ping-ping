@@ -57,7 +57,8 @@ schedules.json
     },
 ]
 
-or specific days / time
+or specific days / time:
+      ...rest
     "hour": 18,
     "minute": 0
     or "day_of_week": "sun", # mon-fri
@@ -93,7 +94,7 @@ or specific days / time
 - GET /ping-ping/status - Returns status of ping ping.
 - GET /ping-ping/service-config - Returns config of ping ping.
 
-### DOCS
+### Docs
 
 - GET /docs - Returns API documentation.
 - GET /redoc - Returns API documentation.
