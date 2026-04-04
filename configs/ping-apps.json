@@ -1,73 +1,9 @@
 [
     {
-        "name": "TimeInProgress-website-client",
-        "slug": "timeinprogress_client",
-        "base_url": "https://www.timeinprogress.com/",
-        "endpoints": [],
-        "active": true,
-        "notify": true
-    },
-    {
-        "name": "TimeInProgress-rockettothesky-API",
-        "slug": "timeinprogress_api",
-        "base_url": "https://www.rockettothesky.com/",
-        "endpoints": ["api/health","api/stats"],
-        "active": true,
-        "notify": true
-    },
-    {
-        "name": "LouisRossouw-website",
-        "slug": "louisrossouw_website",
-        "base_url": "https://www.louisrossouw.com/",
-        "endpoints": [],
-        "active": true,
-        "notify": true
-    },
-    {
-        "name": "QuixVert",
-        "slug": "quixvert",
-        "base_url": "https://www.quixvert.com/",
-        "endpoints": [],
-        "active": true,
-        "notify": true
-    },
-    {
-        "name": "Temperature/Humidity Room 01",
-        "slug": "temperature_humidity",
-        "base_url": "http://10.0.0.153/",
-        "endpoints": ["temperature","humidity"],
-        "active": true,
-        "notify": true
-    },
-    {
-        "name": "Temperature/Humidity Room 02",
-        "slug": "temperature_humidity_02",
-        "base_url": "http://10.0.0.154/",
-        "endpoints": ["temperature","humidity"],
-        "active": true,
-        "notify": true
-    },
-    {
         "name": "Meter Reader API",
         "slug": "meter_reader_api",
         "base_url": "http://10.0.0.152:5001/",
         "endpoints": ["process-meter","electricity"],
-        "active": true,
-        "notify": true
-    },
-    {
-        "name": "Site Alert",
-        "slug": "site_alert",
-        "base_url": "http://10.0.0.152:5003/",
-        "endpoints": ["health"],
-        "active": true,
-        "notify": true
-    },
-    {
-        "name": "Auto Actions",
-        "slug": "auto_actions",
-        "base_url": "http://10.0.0.152:5004/",
-        "endpoints": ["health"],
         "active": true,
         "notify": true
     }
