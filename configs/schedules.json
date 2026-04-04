@@ -1,56 +1,8 @@
 [
     {
-        "name": "timeinprogress-website-client",
-        "action": "timeinprogress_client",
-        "trigger": "interval",
-        "hours": 1
-    },
-    {
-        "name": "TimeInProgress-rockettothesky-API",
-        "action": "timeinprogress_api",
-        "trigger": "interval",
-        "hours": 1
-    },
-    {
-        "name": "LouisRossouw-website",
-        "action": "louisrossouw_website",
-        "trigger": "interval",
-        "hours": 1
-    },
-    {
-        "name": "QuixVert",
-        "action": "quixvert",
-        "trigger": "interval",
-        "hours": 1
-    },
-    {
-        "name": "Temperature/Humidity Room 01",
-        "action": "temperature_humidity",
-        "trigger": "interval",
-        "hours": 1
-    },
-    {
-        "name": "Temperature/Humidity Room 02",
-        "action": "temperature_humidity_02",
-        "trigger": "interval",
-        "hours": 1
-    },
-    {
         "name": "Meter Reader API",
         "action": "meter_reader_api",
         "trigger": "interval",
         "hours": 1
     },
-    {
-        "name": "Site Alert",
-        "action": "site_alert",
-        "trigger": "interval",
-        "hours": 1
-    },
-    {
-        "name": "Auto Actions",
-        "action": "auto_actions",
-        "trigger": "interval",
-        "hours": 1
-    }
 ]
