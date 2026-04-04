@@ -1,8 +1,0 @@
-[
-    {
-        "name": "Meter Reader API",
-        "action": "meter_reader_api",
-        "trigger": "interval",
-        "hours": 1
-    },
-]
