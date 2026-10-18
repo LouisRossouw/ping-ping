@@ -45,7 +45,9 @@ def run_action(settings, action_slug):
     to_ping = action.get('active')
     base_url = action.get('base_url')
     endpoints = action.get('endpoints')
-    headers = action.get('headers', {})
+    # Expand ${VAR} placeholders from the environment so secrets stay out of configs.
+    headers = {k: os.path.expandvars(v)
+               for k, v in action.get('headers', {}).items()}
 
     is_endpoints = len(endpoints) > 0
     if to_ping:

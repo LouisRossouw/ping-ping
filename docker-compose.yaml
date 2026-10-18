@@ -7,6 +7,8 @@ services:
       - ./configs:/app/configs
       - ./lib:/app/lib
       - /app/venv
+    env_file:
+      - ../secrets/headscale.env
     restart: unless-stopped
     ports:
       - "5005:5005"
