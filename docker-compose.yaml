@@ -9,6 +9,7 @@ services:
       - /app/venv
     env_file:
       - ../secrets/headscale.env
+      - ../secrets/data_ingest.env
     restart: unless-stopped
     ports:
       - "5005:5005"
